@@ -1,17 +1,31 @@
-# avaliacao_library
+# Digital Library
 
-A new Flutter project.
+Aplicativo móvel desenvolvido em Flutter para a atividade avaliativa da unidade curricular **Desenvolvimento para Dispositivos Móveis**, ministrada pelo professor **Gabriel Caixeta Silva**.
 
-## Getting Started
+## Curso
 
-This project is a starting point for a Flutter application.
+Tecnologia em Análise e Desenvolvimento de Sistemas (ADS) — Senac.
 
-A few resources to get you started if this is your first Flutter project:
+## Integrantes
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- [Felipe Fernando Corrêa](https://github.com/FelipeFernando04)
+- [Gabriel Godoy Motta](https://github.com/godoy220)
+- [Arthur Vieira Bruske](https://github.com/ArthurVieiraaa)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Objetivo
+
+Criar um aplicativo de busca e organização de livros com integração a API pública, navegação entre telas e favoritos persistidos localmente.
+
+## Tecnologias planejadas
+
+- Flutter
+- Dart
+- Material Design 3
+- Open Library Search API
+- pacote `http`
+- `shared_preferences`
+- Git e GitHub
+
+## Organização do trabalho
+
+O projeto será desenvolvido por meio de branches e Pull Requests separados para registrar a contribuição individual de cada integrante.
