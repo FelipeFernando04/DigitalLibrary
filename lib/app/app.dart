@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../screens/root/app_shell.dart';
 import '../utils/app_constants.dart';
 import 'app_theme.dart';

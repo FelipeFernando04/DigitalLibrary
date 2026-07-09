@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../models/book.dart';
 import '../../widgets/book_card.dart';
 import '../../widgets/empty_state.dart';
