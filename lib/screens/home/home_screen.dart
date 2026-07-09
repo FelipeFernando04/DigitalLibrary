@@ -8,14 +8,19 @@ import '../../widgets/book_card.dart';
 import '../../widgets/empty_state.dart';
 import '../../widgets/error_view.dart';
 import '../../widgets/loading_view.dart';
+import '../details/book_details_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
     super.key,
     required this.repository,
+    required this.favorites,
+    required this.onToggleFavorite,
   });
 
   final BookRepository repository;
+  final List<Book> favorites;
+  final Future<void> Function(Book book) onToggleFavorite;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -34,6 +39,10 @@ class _HomeScreenState extends State<HomeScreen> {
   void dispose() {
     _searchController.dispose();
     super.dispose();
+  }
+
+  bool _isFavorite(Book book) {
+    return widget.favorites.any((favorite) => favorite.id == book.id);
   }
 
   Future<void> _search() async {
@@ -87,6 +96,18 @@ class _HomeScreenState extends State<HomeScreen> {
       _errorMessage = null;
       _validationMessage = null;
     });
+  }
+
+  void _openDetails(Book book) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => BookDetailsScreen(
+          book: book,
+          isFavorite: _isFavorite(book),
+          onToggleFavorite: widget.onToggleFavorite,
+        ),
+      ),
+    );
   }
 
   @override
@@ -186,7 +207,14 @@ class _HomeScreenState extends State<HomeScreen> {
       itemCount: _books.length,
       separatorBuilder: (_, __) => const SizedBox(height: 12),
       itemBuilder: (context, index) {
-        return BookCard(book: _books[index]);
+        final book = _books[index];
+
+        return BookCard(
+          book: book,
+          isFavorite: _isFavorite(book),
+          onTap: () => _openDetails(book),
+          onToggleFavorite: () => widget.onToggleFavorite(book),
+        );
       },
     );
   }
